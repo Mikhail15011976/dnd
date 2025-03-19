@@ -43,7 +43,6 @@ export default class DragController {
     this.grabbedCard.style.top = `${top}px`;
     this.grabbedCard.style.left = `${left}px`;
 
-    // Установить grabbing курсор и отключить выделение текста
     document.body.classList.add("grabbing", "no-select");
 
     document.addEventListener("mousemove", this.onMouseMoveHandler);
@@ -98,7 +97,6 @@ export default class DragController {
   }
 
   onMouseUp() {
-    // Удалить grabbing курсор и включить выделение текста
     document.body.classList.remove("grabbing", "no-select");
 
     this.clone.before(this.grabbedCard);
